@@ -8,15 +8,26 @@ import json
 import os
 import random
 from dotenv import load_dotenv
+from pathlib import Path
+load_dotenv(dotenv_path=Path(".") / ".env")
 
+# Загрузка переменных из .env
+API_TOKEN = os.getenv("API_TOKEN")
 
-API_TOKEN = '7758208103:AAHejqh9ou07Wy0GrWEUgt5Q-GEvN5xiMIs'
-ADMIN_ID = 1007067250
+admin_id_env = os.getenv("ADMIN_ID")
+if admin_id_env is None:
+    raise ValueError("ADMIN_ID not found in environment variables")
+ADMIN_ID = int(admin_id_env)
+
+# Инициализация бота
+bot = Bot(token=API_TOKEN, parse_mode='HTML')
+dp = Dispatcher(bot)
+
+logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=API_TOKEN, parse_mode='HTML')
 dp = Dispatcher(bot)
 logging.basicConfig(level=logging.INFO)
-
 DATA_FILE = 'data.json'
 
 def load_data():
