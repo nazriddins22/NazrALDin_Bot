@@ -1,2 +1,3 @@
-API_TOKEN = '7962442065:AAGYQMxikGA9OJ0FJD-0Yp0NBvDduHUGeyY'
+API_TOKEN = '7758208103:AAHejqh9ou07Wy0GrWEUgt5Q-GEvN5xiMIs'
 ADMIN_ID = 1007067250
+DATABASE_URL=postgresql://nazraldin_bot_user:l58eCwo1Glh99iVEQQC6HCQKvshNIWQL@dpg-d0on6q0dl3ps73a4tlm0-a.oregon-postgres.render.com/nazraldin_bot

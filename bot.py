@@ -7,8 +7,10 @@ from datetime import datetime
 import json
 import os
 import random
+from dotenv import load_dotenv
 
-API_TOKEN = '7962442065:AAGYQMxikGA9OJ0FJD-0Yp0NBvDduHUGeyY'
+
+API_TOKEN = '7758208103:AAHejqh9ou07Wy0GrWEUgt5Q-GEvN5xiMIs'
 ADMIN_ID = 1007067250
 
 bot = Bot(token=API_TOKEN, parse_mode='HTML')
@@ -511,6 +513,7 @@ async def start(msg: types.Message):
     save_data()
     await msg.answer(f"السلام عليكم ورحمة الله وبركاته <b>{name}</b>", reply_markup=main_menu)
 
+
 @dp.message_handler(Text(equals='Суры 📖'))
 async def surah_list(msg: types.Message):
     markup = ReplyKeyboardMarkup(resize_keyboard=True)
@@ -672,7 +675,7 @@ async def about(msg: types.Message):
 
 async def reminder():
     while True:
-        await asyncio.sleep(3600)
+        await asyncio.sleep(650)
         for uid in log:
             r = random.choice(['surah', 'hadith'])
 
